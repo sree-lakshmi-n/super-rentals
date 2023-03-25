@@ -1,13 +1,13 @@
 'use strict';
 
 module.exports = function (environment) {
-  const ENV = {
+  let ENV = {
     modulePrefix: 'super-rentals',
     environment,
     rootURL: '/',
     locationType: 'history',
     EmberENV: {
-      EXTEND_PROTOTYPES: false,
+      RAISE_ON_DEPRECATION: true,
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. EMBER_NATIVE_DECORATOR_SUPPORT: true
@@ -27,7 +27,6 @@ module.exports = function (environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
-
   if (environment === 'test') {
     // Testem prefers this...
     ENV.locationType = 'none';
@@ -43,6 +42,9 @@ module.exports = function (environment) {
   if (environment === 'production') {
     // here you can enable a production-specific feature
   }
+
+  ENV.MAPBOX_ACCESS_TOKEN =
+    'pk.eyJ1Ijoic2Fkb2gxMTUyMSIsImEiOiJjbGZtczYxb28wZjBiM3FvMzlrN3c0djVsIn0.LL6-HBw_DKrQI0t6FmS3Kg';
 
   return ENV;
 };
